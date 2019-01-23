@@ -62,6 +62,7 @@ Mura.DisplayObject.toc = Mura.UI.extend({
         var level = 2;
         var addClickHandler = function(item, h) {
             item.addEventListener('click', function(e) {
+                history.pushState({}, h.textContent, "#" + encodeURIComponent(h.textContent));
                 h.scrollIntoView();
                 e.preventDefault();
             }, false);
